@@ -6,8 +6,9 @@ import java.time.LocalDate;
 public class BudgetTrackerGUI extends JFrame {
     private BudgetTracker tracker;
     private TransactionPanel transactionPanel;
-
-    public BudgetTrackerGUI() { // Sets up the GUI with panels for dashboard, adding transactions, history, and file operations.
+    
+    // Sets up the GUI with panels for dashboard, adding transactions, history, and file operations
+    public BudgetTrackerGUI() { 
         tracker = new BudgetTracker();
         transactionPanel = new TransactionPanel();
 
@@ -64,8 +65,8 @@ public class BudgetTrackerGUI extends JFrame {
         add(historyPanel, BorderLayout.SOUTH);
         add(filePanel, BorderLayout.PAGE_END);
 
-        // Adds a new transaction based on user input and updates the dashboard and history.
-        addButton.addActionListener(e -> {
+        // Adds a new transaction based on user input and updates the dashboard and history
+        addButton.addActionListener(_ -> {
             String description = descriptionField.getText();
             double amount = Double.parseDouble(amountField.getText());
             String type = (String) typeBox.getSelectedItem();
@@ -78,8 +79,8 @@ public class BudgetTrackerGUI extends JFrame {
             transactionPanel.updateTransactions(tracker.getAllTransactions());
         });
 
-        // Saves all transactions to a file.
-        saveButton.addActionListener(e -> {
+        // Saves all transactions to a file
+        saveButton.addActionListener(_ -> {
             try {
                 TransactionManager.saveTransactions(tracker);
                 JOptionPane.showMessageDialog(this, "Transactions saved successfully!");
@@ -88,8 +89,8 @@ public class BudgetTrackerGUI extends JFrame {
             }
         });
 
-        // Loads transactions from a file and updates the dashboard and history.
-        loadButton.addActionListener(e -> {
+        // Loads transactions from a file and updates the dashboard and history
+        loadButton.addActionListener(_ -> {
             try {
                 TransactionManager.loadTransactions(tracker);
                 updateDashboard(incomeLabel, expenseLabel, balanceLabel);
@@ -104,8 +105,9 @@ public class BudgetTrackerGUI extends JFrame {
         setSize(800, 600);
         setVisible(true);
     }
-
-    private void updateDashboard(JLabel incomeLabel, JLabel expenseLabel, JLabel balanceLabel) { // Updates the dashboard labels with the latest totals.
+    
+    // Updates the dashboard labels with the latest totals.
+    private void updateDashboard(JLabel incomeLabel, JLabel expenseLabel, JLabel balanceLabel) { 
         incomeLabel.setText(String.format("Total Income: $%.2f", tracker.getTotalIncome()));
         expenseLabel.setText(String.format("Total Expenses: $%.2f", tracker.getTotalExpenses()));
         balanceLabel.setText(String.format("Balance: $%.2f", tracker.getBalance()));

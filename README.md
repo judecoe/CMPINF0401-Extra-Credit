@@ -16,14 +16,14 @@ This project is a GUI-based personal budget tracker application designed to help
 
 ### GUI Design
 
-The application uses a JPanel with BorderLayout to organize the interface into distinct sections:
+The application uses a JPanel with BorderLayout to organize the interface into sections:
 
 - A dashboard for financial summaries.
 - A panel for adding new transactions.
 - A history panel to display past transactions.
 - A file operations panel for saving and loading data.
 
-Interactive components like JTextField, JComboBox, and JButton make the interface user-friendly.
+Components like JTextField, JComboBox, and JButton make the interface user-friendly.
 
 ### Transaction Management
 
@@ -35,16 +35,17 @@ The dashboard updates instantly to reflect changes in income, expenses, and bala
 
 ## Challenges & Solutions
 
-- **Organizing the Layout**: Initially, I struggled with arranging the GUI components. Learning and applying BorderLayout and GridLayout helped resolve this issue.
+- **Organizing the Layout**: Originally, I struggled with arranging the GUI components. Learning and applying BorderLayout and GridLayout helped resolve this issue.
 - **Parsing User Input**: Converting text input to numerical values (e.g., doubles) was tricky at first. I addressed this by adding input validation.
 
 ## What I Learned
 
-- Before this project, I had limited experience with advanced Swing components like JComboBox and GridLayout. Now, I feel confident using them to create complex GUIs.
+- Before this project, I had little experience with any different Swing components. Now, I feel confident using them to create complex GUIs.
 - I also learned how to handle file operations in Java, which was a new skill for me.
 
 ## Self-Assessment
 
 - **Effort**: I dedicated around 8-10 hours to this project, including research, coding, and debugging.
 - **Challenges Overcome**: I successfully built a functional and intuitive GUI, learned new Swing components, and implemented file operations.
+- **Research**: I had to look through a lot of information on Java Swing and FileWriter, including these helpful resources (https://www.geeksforgeeks.org/introduction-to-java-swing/, https://www.geeksforgeeks.org/filewriter-class-in-java/). Shout out to Geeks for Geeks.
 - **Points Justification**: I believe this project deserves 20 points due to the well-structured GUI, file handling, and real-time updates to the dashboard and transaction history.

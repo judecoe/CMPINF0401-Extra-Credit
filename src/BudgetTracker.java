@@ -8,28 +8,34 @@ public class BudgetTracker {
         transactions = new ArrayList<>();
     }
 
-    // Adds a transaction to the list.
+    // Adds a transaction to the list
     public void addTransaction(Transaction transaction) {
         transactions.add(transaction);
     }
 
-    // Calculates the total income from all transactions.
+    // Calculates the total income from all transactions
     public double getTotalIncome() {
-        return transactions.stream()
-                .filter(Transaction::isIncome)
-                .mapToDouble(Transaction::getAmount)
-                .sum();
+        double total = 0;
+        for (Transaction t : transactions) {
+            if (t.isIncome()) {
+                total += t.getAmount();
+            }
+        }
+        return total;
     }
 
-    // Calculates the total expenses from all transactions.
+    // Calculates the total expenses from all transactions
     public double getTotalExpenses() {
-        return transactions.stream()
-                .filter(t -> !t.isIncome())
-                .mapToDouble(Transaction::getAmount)
-                .sum();
+        double total = 0;
+        for (Transaction t : transactions) {
+            if (!t.isIncome()) {
+                total += t.getAmount();
+            }
+        }
+        return total;
     }
 
-    // Calculates the balance by subtracting expenses from income.
+    // Calculates the balance by subtracting expenses from income
     public double getBalance() {
         return getTotalIncome() - getTotalExpenses();
     }
