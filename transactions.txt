@@ -1,0 +1,4 @@
+Income,1000.000000,Paycheck,2025-04-20,Weekly Paycheck
+Expense,50.000000,Necessities,2025-04-20,Gas
+Expense,100.000000,Necessities,2025-04-20,Groceries
+Expense,20.000000,Food,2025-04-20,Chinese Food
